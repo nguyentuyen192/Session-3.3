@@ -11,3 +11,33 @@ This is an educational project on data cleaning and preparation using SQL. The o
 |   Joete Cudiff|51|divorced|jcudiff7@ycombinator.com|616-617-0965|975 Dwight Plaza,Grand Rapids,Michigan|Research Nurse|11/16/2014|
 |mendie alexandrescu|46|single|malexandrescu8@state.gov|504-918-4753|34 Delladonna Terrace,New Orleans,Louisiana|Systems Administrator III|3/12/1921|
 | fey kloss|52|married|fkloss9@godaddy.com|808-177-0318|8976 Jackson Park,Honolulu,Hawaii|Chemical Engineer|11/5/2014|
+
+Create a new table for cleaning
+
+CREATE TABLE club_member_info_cleaned (
+	full_name VARCHAR(50),
+	age INTEGER,
+	martial_status VARCHAR(50),
+	email VARCHAR(50),
+	phone NVARCHAR(50),
+	full_address NVARCHAR(50),
+	job_title VARCHAR(50),
+	membership_date NVARCHAR(50)
+);
+
+Copy all value from original table
+
+INSERT INTO club_member_info_cleaned
+SELECT * FROM club_member_info 
+
+Step 1: Change age column value to 70 where age is greater than 100 
+
+Step 2: Change martial_status to married where martial_status is empty
+
+Step 3: Change martial_status to divorced where martial_status is divored
+
+Step 4: Change phone to 999-999-9999 where phone is empty
+
+Step 5: Change job_tittle to Senior Sales Associate where job_title is empty
+
+Step 6: Trim space of full_name
